@@ -4,6 +4,7 @@ import Tab from 'react-bootstrap/Tab';
 import MyButton from './MyButton';
 import MasterForm from './MasterForm';
 import MyTable from './MyTable';
+import MyVictoryCharts from './MyVictoryChart';
 
 
 class MyTabs extends React.Component{
@@ -23,7 +24,7 @@ class MyTabs extends React.Component{
                         <MyTable></MyTable>
                     </Tab>
                     <Tab eventKey="chart" title="Charts">
-                        Currently in development
+                        <MyVictoryCharts/>
 
                     </Tab>
 
