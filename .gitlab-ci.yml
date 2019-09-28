@@ -4,5 +4,5 @@ script:npm run-script build
 test:
 script:npm run cypress
 
-firebase-deploy:
+deploy:
 script:firebase deploy
