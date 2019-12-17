@@ -1,13 +1,14 @@
 image: lcxat/ruby-wagon-cypress
 
+cache: 
+  key: $CI_COMMIT_REF_SLUG-$CI_PROJECT_DIR
+  paths:
+    - node_modules/
+    - cypress/
 before_script:
   - npm install
 cypress:
-  cache: 
-    key: $CI_COMMIT_REF_SLUG-$CI_PROJECT_DIR
-    paths:
-      - node_modules/
-      - ~/.cache
+
   script:
     - ./node_modules/.bin/cypress run
   only:
