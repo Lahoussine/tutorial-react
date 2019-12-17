@@ -3,8 +3,15 @@ image: lcxat/ruby-wagon-cypress
 before_script:
   - npm install
 cypress:
+  cache: 
+    key: $CI_COMMIT_REF_SLUG-$CI_PROJECT_DIR
+    paths:
+      - node_modules/
   script:
     - ./node_modules/.bin/cypress run
+  only:
+    changes:
+      - package-lock.json
   artifacts:
     paths:
       - /builds/<group>/<project>/cypress/screenshots/
