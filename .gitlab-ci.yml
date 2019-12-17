@@ -1,8 +1,10 @@
-build:
-script:npm run-script build
+image: lcxat/ruby-wagon-cypress
 
-test:
-script:npm run cypress
 
-deploy:
-script:firebase deploy
+cypress:
+  script:
+    - npm test
+  artifacts:
+    paths:
+      - /builds/<group>/<project>/cypress/screenshots/
+      - /builds/<group>/<project>/cypress/videos/
