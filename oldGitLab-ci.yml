@@ -1,8 +1,0 @@
-build:
-script:npm run-script build
-
-test:
-script:npm run cypress
-
-deploy:
-script:firebase deploy
