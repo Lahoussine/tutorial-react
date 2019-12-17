@@ -7,7 +7,7 @@ cypress:
     key: $CI_COMMIT_REF_SLUG-$CI_PROJECT_DIR
     paths:
       - node_modules/
-      -/Cypress
+      - ~/.cache
   script:
     - ./node_modules/.bin/cypress run
   only:
