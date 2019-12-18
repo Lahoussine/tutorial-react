@@ -60,6 +60,10 @@ context('Assertions', () => {
       expect('FooBar').to.match(/bar$/i)
     })
 
+    it('must fail',()=>{
+      expect(false).to.be.true
+    })
+
     it('pass your own callback function to should()', () => {
       // Pass a function to should that can have any number
       // of explicit assertions within it.
