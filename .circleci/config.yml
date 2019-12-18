@@ -7,7 +7,7 @@ jobs:
       - checkout # check out the code in the project directory
       - run: echo "hello world1" # run the `echo` command
       - run: npm i ci
-      - run: sudo npm ci
+      #- run: sudo npm ci
       #- run: npm install cypress
       - run: ./node_modules/.bin/cypress run
       - run: pwd
