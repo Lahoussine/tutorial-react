@@ -22,3 +22,15 @@ cypresse:
     paths:
       - /builds/<group>/<project>/cypress/screenshots/
       - /builds/<group>/<project>/cypress/videos/
+
+cypresse2:
+
+  script:
+    - ./node_modules/.bin/cypress run
+  only:
+    changes:
+      - package-lock.json
+  artifacts:
+    paths:
+      - /builds/<group>/<project>/cypress/screenshots/
+      - /builds/<group>/<project>/cypress/videos/
