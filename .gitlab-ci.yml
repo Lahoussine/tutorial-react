@@ -2,7 +2,6 @@ image: lcxat/ruby-wagon-cypress
 
 
 before_script:
-  - checkout
   - npm install
   - npm install cypress
 
