@@ -6,9 +6,9 @@ jobs:
     steps:
       - checkout # check out the code in the project directory
       - run: echo "hello world1" # run the `echo` command
-      - run: npm install
-      - run: npm install cypress
-      #- run: ./node_modules/.bin/cypress run
+      - run: npm ci
+      #- run: npm install cypress
+      - run: ./node_modules/.bin/cypress run
       - run: pwd
   build2:
     docker: 
