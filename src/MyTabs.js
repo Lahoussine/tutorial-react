@@ -5,32 +5,36 @@ import MyButton from './MyButton';
 import MasterForm from './MasterForm';
 import MyTable from './MyTable';
 import MyVictoryCharts from './MyVictoryChart';
+import MyForms from './MyForms';
 
 
-class MyTabs extends React.Component{
+class MyTabs extends React.Component {
 
 
-    render(){
+    render() {
 
-        return(
-                <Tabs>
-                    <Tab eventKey="home" title="Button Group">
-                        <MyButton></MyButton>
-                    </Tab>
-                    <Tab eventKey="multistepForm" title="MultiStep Form">
-                        <MasterForm></MasterForm>
-                    </Tab>
-                    <Tab eventKey="table" title="Table" >
-                        <MyTable></MyTable>
-                    </Tab>
-                    <Tab eventKey="chart" title="Charts">
-                        <MyVictoryCharts/>
+        return (
+            <Tabs>
+                <Tab eventKey="home" title="Button Group">
+                    <MyButton></MyButton>
+                </Tab>
+                <Tab eventKey="multistepForm" title="MultiStep Form">
+                    <MasterForm></MasterForm>
+                </Tab>
+                <Tab eventKey="oldForm" title="Old Form To Split">
+                    <MyForms></MyForms>
+                </Tab>
+                <Tab eventKey="table" title="Table" >
+                    <MyTable></MyTable>
+                </Tab>
+                <Tab eventKey="chart" title="Charts">
+                    <MyVictoryCharts />
 
-                    </Tab>
+                </Tab>
 
 
 
-                </Tabs>
+            </Tabs>
 
 
         );
