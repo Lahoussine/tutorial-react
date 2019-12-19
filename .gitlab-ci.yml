@@ -19,13 +19,13 @@ updateCode:
   stage: update
   script: 
     - git status
-    - git pull  
+    - git pull origin master
 
 buildReactApp:
   stage: build
   script:
     - npm install
-    
+
 cypresse:
   stage: test
   script:
