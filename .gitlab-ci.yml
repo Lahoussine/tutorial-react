@@ -30,9 +30,9 @@ cypresse:
   stage: test
   script:
     - ./node_modules/.bin/cypress run
-  only:
-    changes:
-      - package-lock.json
+  #only:
+  #  changes:
+  #    - package-lock.json
   artifacts:
     paths:
       - /builds/<group>/<project>/cypress/screenshots/
