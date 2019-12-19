@@ -1,29 +1,32 @@
 image: lcxat/ruby-wagon-cypress
 
-
-before_script:
-  - npm install
-  - npm install cypress
+stages:
+  - update
+  - build
+  - test
+  - deploy
+#before_script:
+#  - npm install
+#  - npm install cypress
 
 cache: 
   key: $CI_COMMIT_REF_SLUG-$CI_PROJECT_DIR
   paths:
     - node_modules/
     - cypress/  
-cypresse:
 
+updateCode:
+  stage: update
+  script: 
+    - git status
+    - git pull  
+    
+buildReactApp:
+  stage: build
   script:
-    - ./node_modules/.bin/cypress run
-  only:
-    changes:
-      - package-lock.json
-  artifacts:
-    paths:
-      - /builds/<group>/<project>/cypress/screenshots/
-      - /builds/<group>/<project>/cypress/videos/
-
-cypresse2:
-
+    - npm install
+cypresse:
+  stage: test
   script:
     - ./node_modules/.bin/cypress run
   only:
