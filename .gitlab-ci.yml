@@ -5,9 +5,9 @@ stages:
   - build
   - test
   - deploy
-#before_script:
+before_script:
 #  - npm install
-#  - npm install cypress
+  - npm install cypress
 
 cache: 
   key: $CI_COMMIT_REF_SLUG-$CI_PROJECT_DIR
