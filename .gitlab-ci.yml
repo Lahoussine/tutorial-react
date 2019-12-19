@@ -1,6 +1,7 @@
 image: lcxat/ruby-wagon-cypress
 
 stages:
+  - status
   - update
   - build
   - test
@@ -15,10 +16,24 @@ cache:
     - node_modules/
     - cypress/  
 
+statusCode:
+  stage: status
+  script: 
+    - git status
+
+whereAmI:
+  stage: status
+  script: 
+    - pwd
+
+whatISee:
+  stage: status
+  script: 
+    - ls -rtl
+
 updateCode:
   stage: update
   script: 
-    - git status
     - git pull origin master
 
 buildReactApp:
