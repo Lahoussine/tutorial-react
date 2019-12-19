@@ -20,11 +20,12 @@ updateCode:
   script: 
     - git status
     - git pull  
-    
+
 buildReactApp:
   stage: build
   script:
     - npm install
+    
 cypresse:
   stage: test
   script:
