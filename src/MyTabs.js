@@ -36,10 +36,9 @@ class MyTabs extends React.Component {
                 <Tab eventKey="material" title="Material UI">
                     <MyMaterialUIComponent></MyMaterialUIComponent>
                 </Tab>
-                <Tab eventKey="badges" title="Bagdes">
+                <Tab eventKey="badges" title="My badges">
                     <MyBadges></MyBadges>
                 </Tab>
-
 
 
             </Tabs>
