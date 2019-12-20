@@ -39,8 +39,12 @@ updateCode:
 buildReactApp:
   stage: build
   script:
-    - npm install
+    - npm run build
 
+deployApp:
+  stage: deploy
+  script:
+    - firebase deploy
 cypresse:
   stage: test
   script:
