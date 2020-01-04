@@ -28,7 +28,7 @@ checkVersion:
   script: 
     - node --version
     - npm --version
-    - npm install latest-version
+    - npm install npm@latest -g
     - npm --version
 
 whatISee:
