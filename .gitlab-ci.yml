@@ -36,11 +36,6 @@ whatISee:
   script: 
     - ls -rtl
 
-updateCode:
-  stage: update
-  script: 
-    - git pull origin master
-
 buildReactApp:
   stage: build
   script:
