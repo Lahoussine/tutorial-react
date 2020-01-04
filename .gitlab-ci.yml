@@ -20,8 +20,14 @@ statusCode:
 
 whereAmI:
   stage: status
-  script: 
+  script:
     - pwd
+
+checkVersion:
+  stage: status
+  script: 
+    - node --version
+    - npm --version
 
 whatISee:
   stage: status
@@ -36,8 +42,6 @@ updateCode:
 buildReactApp:
   stage: build
   script:
-    - node --version
-    - npm --version
     - npm run build
 
 deployApp:
