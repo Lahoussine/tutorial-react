@@ -39,6 +39,7 @@ whatISee:
 buildReactApp:
   stage: build
   script:
+    - npm install npm@latest -g
     - npm --version
     - npm run build
 
