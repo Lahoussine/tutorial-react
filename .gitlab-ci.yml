@@ -28,6 +28,8 @@ checkVersion:
   script: 
     - node --version
     - npm --version
+    - npm install latest-version
+    - npm --version
 
 whatISee:
   stage: status
@@ -42,6 +44,7 @@ updateCode:
 buildReactApp:
   stage: build
   script:
+    - npm --version
     - npm run build
 
 deployApp:
