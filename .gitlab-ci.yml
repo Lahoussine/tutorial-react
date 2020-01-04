@@ -41,7 +41,7 @@ buildReactApp:
   script:
     - npm install npm@latest -g
     - npm --version
-    - npm run build
+    #- npm run build
 
 deployApp:
   stage: deploy
