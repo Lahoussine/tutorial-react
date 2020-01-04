@@ -39,6 +39,7 @@ updateCode:
 buildReactApp:
   stage: build
   script:
+    - node --version
     - npm run build
 
 deployApp:
