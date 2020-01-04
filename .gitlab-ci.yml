@@ -6,9 +6,6 @@ stages:
   - build
   - test
   - deploy
-before_script:
-#  - npm install
-  - npm install cypress
 
 cache: 
   key: $CI_COMMIT_REF_SLUG-$CI_PROJECT_DIR
@@ -49,6 +46,7 @@ deployApp:
 cypresse:
   stage: test
   script:
+    - npm install cypress
     - ./node_modules/.bin/cypress run
   #only:
   #  changes:
