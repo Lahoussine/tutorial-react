@@ -37,6 +37,7 @@ buildReactApp:
   stage: build
   script:
     - node --version
+    - npm --version
     - npm run build
 
 deployApp:
