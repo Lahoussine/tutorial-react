@@ -46,7 +46,7 @@ buildReactApp:
 deployApp:
   stage: deploy
   script:
-    - firebase deploy
+    #- firebase deploy
 cypresse:
   stage: test
   script:
