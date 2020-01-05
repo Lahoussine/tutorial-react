@@ -10,10 +10,17 @@ context('Assertions', () => {
     cy.visit('http://localhost:3000')
   })
 
-  describe('click on primary button', () => {
+  describe('Cypress', () => {
+
+it('fill the form',()=>{
+  cy.contains("Old Form To Split").click();
+  cy.wait(2000);
+  cy.get('input[name="name"]').clear().type("TEST");
+  cy.wait(1500);
+})
     it('.should() - click on primary button', () => {
       let delay = 800;
-      cy.get('.btn-outline-primary').click();
+      cy.get('.btn-outline-primary').first().click();
       cy.wait(delay);
       cy.get('.btn-outline-secondary').click();
       
@@ -30,65 +37,6 @@ context('Assertions', () => {
       cy.wait(delay);
       cy.get('.btn-outline-dark').click();
       cy.wait(delay);
-      cy.get('.btn-outline-primary').trigger('mouseenter');
-      
-  describe('Explicit Assertions', () => {
-    // https://on.cypress.io/assertions
-    it('expect - make an assertion about a specified subject', () => {
-      // We can use Chai's BDD style assertions
-      expect(true).to.be.true
-      const o = { foo: 'bar' }
-
-      expect(o).to.equal(o)
-      expect(o).to.deep.equal({ foo: 'bar' })
-      // matching text using regular expression
-      expect('FooBar').to.match(/bar$/i)
-    })
-
-    it('must fail',()=>{
-      expect(false).to.be.true
-    })
-
-    it('pass your own callback function to should()', () => {
-      // Pass a function to should that can have any number
-      // of explicit assertions within it.
-      // The ".should(cb)" function will be retried
-      // automatically until it passes all your explicit assertions or times out.
-      cy.get('.assertions-p')
-        .find('p')
-        .should(($p) => {
-          // https://on.cypress.io/$
-          // return an array of texts from all of the p's
-          // @ts-ignore TS6133 unused variable
-          const texts = $p.map((i, el) => Cypress.$(el).text())
-
-          // jquery map returns jquery object
-          // and .get() convert this to simple array
-          const paragraphs = texts.get()
-
-          // array should have length of 3
-          expect(paragraphs, 'has 3 paragraphs').to.have.length(3)
-
-          // use second argument to expect(...) to provide clear
-          // message with each assertion
-          expect(paragraphs, 'has expected text in each paragraph').to.deep.eq([
-            'Some text from first p',
-            'More text from second p',
-            'And even more text from third p',
-          ])
-        })
-    })
-
-    it('finds element by class name regex', () => {
-      cy.get('.docs-header')
-        .find('div')
-        // .should(cb) callback function will be retried
-        .should(($div) => {
-          expect($div).to.have.length(1)
-
-          const className = $div[0].className
-
-    })
+    });
   })
-
-})
+});
