@@ -6,9 +6,6 @@ stages:
   - build
   - test
   - deploy
-before_script:
-#  - npm install
-  - npm install cypress
 
 cache: 
   key: $CI_COMMIT_REF_SLUG-$CI_PROJECT_DIR
@@ -23,27 +20,37 @@ statusCode:
 
 whereAmI:
   stage: status
-  script: 
+  script:
     - pwd
+
+checkVersion:
+  stage: status
+  script: 
+    - node --version
+    - npm --version
+    - npm install npm@latest -g
+    - npm --version
 
 whatISee:
   stage: status
   script: 
     - ls -rtl
 
-updateCode:
-  stage: update
-  script: 
-    - git pull origin master
-
 buildReactApp:
   stage: build
   script:
-    - npm install
+    - npm install npm@latest -g
+    - npm --version
+    #- npm run build
 
+#deployApp:
+#  stage: deploy
+#  script:
+    #- firebase deploy
 cypresse:
   stage: test
   script:
+    - npm install cypress
     - ./node_modules/.bin/cypress run
   #only:
   #  changes:

@@ -5,6 +5,8 @@ import MyButton from './MyButton';
 import MasterForm from './MasterForm';
 import MyTable from './MyTable';
 import MyVictoryCharts from './MyVictoryChart';
+import MyMaterialUIComponent from './MyMaterialUIComponent';
+import MyBadges from './MyBadges'
 import MyForms from './MyForms';
 
 
@@ -31,7 +33,12 @@ class MyTabs extends React.Component {
                     <MyVictoryCharts />
 
                 </Tab>
-
+                <Tab eventKey="material" title="Material UI">
+                    <MyMaterialUIComponent></MyMaterialUIComponent>
+                </Tab>
+                <Tab eventKey="badges" title="My badges">
+                    <MyBadges></MyBadges>
+                </Tab>
 
 
             </Tabs>
