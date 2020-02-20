@@ -18,8 +18,8 @@ class MyForms extends React.Component {
       city: 'Denain',
       state: 'Nord',
       country: 'France',
-      password: '',
-      confirmedPassword: ''
+      password: 'myPassword',
+      confirmedPassword: 'myPassword'
 
     };
     this.xhr = new XMLHttpRequest(); 
@@ -48,6 +48,7 @@ class MyForms extends React.Component {
   }
   handleSubmit(event) {
     event.preventDefault();
+<<<<<<< HEAD
     console.log(JSON.stringify(this.state));
     console.log(this.xhr);
     
@@ -66,6 +67,24 @@ class MyForms extends React.Component {
    /* this.xhr.open('POST', 'http://localhost:9000/kafka/publishReact');
     this.xhr.setRequestHeader("Access-Control-Allow-Origin","*");
     this.xhr.send(JSON.stringify(this.state));*/
+=======
+   // console.log(JSON.stringify(this.state));
+    let endpoint = 'http://localhost:9000/kafka/publish';
+    fetch(endpoint,{
+    method:'POST',
+    //mode: 'no-cors' ,
+    headers:{
+        "Content-Type": "application/json;charset=UTF-8",
+        "Accept":"*/*",
+        //"Access-Control-Allow-Origin": "*",
+        //'Access-Control-Allow-Origin':'*',
+        "Access-Control-Allow-Methods": "DELETE, POST, GET, OPTIONS",
+        "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+        
+      },
+      body: JSON.stringify(this.state)
+    }).then((result)=>{console.log('SUCCESS')},(error)=>{console.log('ERROR' ,error)});
+>>>>>>> 12df012647fc7965227ea0d5ae4dee1e46c4ae89
   }
   render() {
     return <Form onSubmit={this.handleSubmit}>
