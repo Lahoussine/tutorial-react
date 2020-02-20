@@ -2,12 +2,13 @@ import React from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { Col } from 'react-bootstrap';
+import axios from 'axios';
 class MyForms extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      name: 'John',
+      name: 'EVA',
       lastname: 'CONNOR',
       email: 'john.connor@gmail.com',
       emailConfirmation: 'john.connor@gmail.com',
@@ -21,6 +22,8 @@ class MyForms extends React.Component {
       confirmedPassword: ''
 
     };
+    this.xhr = new XMLHttpRequest(); 
+    console.log(axios);
     this.handleUserInput = this.handleUserInput.bind(this);
     this.handleUserPwd = this.handleUserPwd.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -46,6 +49,23 @@ class MyForms extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     console.log(JSON.stringify(this.state));
+    console.log(this.xhr);
+    
+    let axiosConfig = {
+      headers: {
+          'Content-Type': 'application/json;charset=UTF-8',
+          "Access-Control-Allow-Origin": "*",
+      }
+    };
+    axios.post('http://localhost:9000/kafka/publishReact',JSON.stringify(this.state),axiosConfig).then((res) => {
+      console.log("RESPONSE RECEIVED: ", res);
+    })
+    .catch((err) => {
+      console.log("AXIOS ERROR: ", err);
+    });
+   /* this.xhr.open('POST', 'http://localhost:9000/kafka/publishReact');
+    this.xhr.setRequestHeader("Access-Control-Allow-Origin","*");
+    this.xhr.send(JSON.stringify(this.state));*/
   }
   render() {
     return <Form onSubmit={this.handleSubmit}>
